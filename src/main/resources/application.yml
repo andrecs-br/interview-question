@@ -1,6 +1,9 @@
 server:
   port: 5000
 
+backbase:
+  my_secret: ${MY_SECRET:my yaml secret}
+
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -18,3 +21,9 @@ spring:
     console:
       enabled: false
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    operations-sorter: method
+  packages-to-exclude: com.backbase.interview.course.exception.handler
