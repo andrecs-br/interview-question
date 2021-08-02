@@ -13,7 +13,6 @@ public interface ParticipantService {
      * @param courseId - The course to be listed
      * @return a list of participants or a list with size 0 wif no participants/course found
      */
-
     List<Participant> getParticipantsByCourse(Long courseId);
 
     /**
