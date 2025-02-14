@@ -1,4 +1,4 @@
-## **Interview question for backbase**
+## **open-api-spring-boot**
 
 The application can be run using mvn spring-boot:run.
 
