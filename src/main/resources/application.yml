@@ -1,10 +1,34 @@
 server:
   port: 5000
 
-backbase:
-  my_secret: ${MY_SECRET:my yaml secret}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    enable:
+      jvm: true
+  logging:
+    level:
+      ROOT: INFO
 
 spring:
+  application:
+    name: Courses API
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
   datasource:
     url: jdbc:h2:mem:testdb
 #    url: jdbc:h2:file:./demo
@@ -26,4 +50,4 @@ springdoc:
     path: /api-docs
   swagger-ui:
     operations-sorter: method
-  packages-to-exclude: com.backbase.interview.course.exception.handler
+  packages-to-exclude: com.andre.course.exception.handler
